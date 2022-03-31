@@ -1,16 +1,19 @@
 # Method to get students from user
 def input_students
-  puts "Please enter the names of the students"
+  puts "Please enter the names of the students, and what cohort they belong to sepearted by a colon e.g. Full Name: cohort"
   puts "To finish, just hit enter twice"
 
   students = []
 
-  name = gets.chomp
+  input = gets.chomp
 
-  while !name.empty? do
-    students << {name: name, cohort: :november}
+  while !input.empty? do
+    name = input.split(":")[0].strip
+    cohort = input.split(":")[1].strip == nil ? :unknown : input.split(":")[1].strip.downcase.to_sym
+
+    students << {name: name, cohort: cohort}
     puts "Now we have #{students.count} students"
-    name = gets.chomp
+    input = gets.chomp
   end
 
   students
