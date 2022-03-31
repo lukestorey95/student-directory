@@ -1,16 +1,16 @@
 # array of students
 students = [
-  {name: "Dr. Hannibal Lecter", cohort: :november},
-  {name: "Darth Vader", cohort: :november},
-  {name: "Nurse Ratched", cohort: :november},
-  {name: "Michael Corleone", cohort: :november},
-  {name: "Alex DeLarge", cohort: :november},
-  {name: "The Wicked Witch of the West", cohort: :november},
-  {name: "Terminator", cohort: :november},
-  {name: "Freddy Krueger", cohort: :november},
-  {name: "The Joker", cohort: :november},
-  {name: "Joffrey Baratheon", cohort: :november},
-  {name: "Norman Bates", cohort: :november}
+  {name: "Dr. Hannibal Lecter", cohort: :november, birth_country: :Germany},
+  {name: "Darth Vader", cohort: :november, birth_country: :Space},
+  {name: "Nurse Ratched", cohort: :november, birth_country: :France},
+  {name: "Michael Corleone", cohort: :november, birth_country: :France},
+  {name: "Alex DeLarge", cohort: :november, birth_country: :Germany},
+  {name: "The Wicked Witch of the West", cohort: :november, birth_country: :USA},
+  {name: "Terminator", cohort: :november, birth_country: :Germany},
+  {name: "Freddy Krueger", cohort: :november, birth_country: :USA},
+  {name: "The Joker", cohort: :november, birth_country: :USA},
+  {name: "Joffrey Baratheon", cohort: :november, birth_country: :Westeros},
+  {name: "Norman Bates", cohort: :november, birth_country: :USA}
 ]
 
 # define methods
@@ -21,7 +21,7 @@ end
 
 def print(students)
   students.each do |student|
-    puts "#{student[:name]} (#{student[:cohort]} cohort)"
+    puts "#{student[:name]} (#{student[:cohort]} cohort) - born in #{student[:birth_country]}"
   end
 end
 
