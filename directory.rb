@@ -15,13 +15,13 @@ students = [
 
 # define methods
 def print_header
-  puts "The students of Villains Academy"
-  puts "-------------"
+  puts "The students of Villains Academy".center(60)
+  puts "-------------".center(60)
 end
 
 def print(students)
   students.each do |student|
-    puts "#{student[:name]} (#{student[:cohort]} cohort)"
+    puts "#{student[:name]} (#{student[:cohort]} cohort)".center(60)
   end
 end
 
