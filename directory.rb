@@ -9,8 +9,7 @@ def input_students
 
   while !name.empty? do
     students << {name: name, cohort: :november}
-    puts "Now we have #{students.count} students"
-    name = gets.chomp
+    puts "Now we have #{students.count} #{students.count == 1 ? "student" : "students"}"
   end
 
   students
