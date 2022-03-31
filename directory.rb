@@ -20,8 +20,10 @@ def print_header
 end
 
 def print(students)
-  students.each do |student|
-    puts "#{student[:name]} (#{student[:cohort]} cohort)"
+  number = students.size
+  while number > 0 do
+    puts "#{students[number - 1][:name]} (#{students[number - 1][:cohort]} cohort)"
+    number -= 1
   end
 end
 
