@@ -21,15 +21,15 @@ end
 
 def print(students)
   students.each do |student|
-    if student[:name][0] == "T"
+    if student[:name].length < 12
       puts "#{student[:name]} (#{student[:cohort]} cohort)"
     end
   end
 end
 
 def print_footer(students)
-  students_initials = students.each.map { |student| student[:name][0] }.select { |initial| initial == "T"}
-  puts "We have #{students_initials.count} great students, beginning with 'T'"
+  students_under_12 = students.each.map { |student| student[:name]}.select { |name| name.length < 12}
+  puts "We have #{students_under_12.count} great students, with names shorter than 12 characters"
 end
 
 # call methods
