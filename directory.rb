@@ -21,12 +21,15 @@ end
 
 def print(students)
   students.each do |student|
-    puts "#{student[:name]} (#{student[:cohort]} cohort)"
+    if student[:name][0] == "T"
+      puts "#{student[:name]} (#{student[:cohort]} cohort)"
+    end
   end
 end
 
 def print_footer(students)
-  puts "Overall, we have #{students.count} great students"
+  students_initials = students.each.map { |student| student[:name][0] }.select { |initial| initial == "T"}
+  puts "We have #{students_initials.count} great students, beginning with 'T'"
 end
 
 # call methods
