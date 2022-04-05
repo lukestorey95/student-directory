@@ -1,10 +1,10 @@
 @students = []
 
 def print_menu
-  puts "1. Input the students",
+  puts "1. Input student names",
   "2. Show the students",
-  "3. Save the list to students.csv",
-  "4. Load the list from students.csv",
+  "3. Save the students to a file",
+  "4. Load the students from students.csv",
   "9. Exit"
 end
 
@@ -66,8 +66,19 @@ def print_footer
   puts "Overall, we have #{@students.count} great students"
 end
 
+def choose_file
+  puts "Choose a file to save students to"
+  filename = STDIN.gets.chomp
+  if File.exists?(filename)
+    filename
+  else 
+    puts "Sorry no such file exists"
+  end
+end
+
 def save_students
-  file = File.open("students.csv", "w")
+  filename = choose_file
+  file = File.open(filename, "w")
 
   @students.each do |student|
     student_data = [student[:name], student[:cohort]]
@@ -75,7 +86,7 @@ def save_students
     file.puts csv_line
   end
   file.close
-  puts "Saved #{@students.count} students to csv"
+  puts "Saved #{@students.count} students to #{filename}"
 end
 
 def add_student(name, cohort)
